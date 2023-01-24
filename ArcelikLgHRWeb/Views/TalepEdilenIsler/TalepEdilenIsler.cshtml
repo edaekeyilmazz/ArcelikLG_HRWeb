@@ -1,0 +1,59 @@
+﻿@model DAL.Models.JobInformation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TempData.Keep("Job1");
+}
+@using (Html.BeginForm())
+{
+    <div class="wizard-navigation">
+        <ul>
+            <li><a href="/Kullanici/KullaniciBilgileri" data-toggle="tab">KULLANICI BİLGİLERİ</a></li>
+            <li><a href="/Kisisel/KisiselBilgiler" data-toggle="tab">KİŞİSEL BİLGİLER</a></li>
+            <li><a href="/Iletisim/IletisimBilgileri" data-toggle="tab">İLETİŞİM BİLGİLERİ</a></li>
+            <li><a href="/Mezuniyet/MezuniyetBilgileri" data-toggle="tab">MEZUNİYET BİLGİLERİ</a></li>
+            <li><a href="/Calisma/CalismaBilgileri" data-toggle="tab">ÇALIŞMA BİLGİLERİ</a></li>
+            <li class="active"><a data-toggle="tab">TALEP EDİLEN İŞLER</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane active" id="jobsInfo">
+            @if (ViewBag.StepValidation != null)
+            {
+                <div class="row">
+                    <div class="alert alert-danger">
+                        <strong>Uyarı!</strong> @ViewBag.StepValidation
+                    </div>
+                </div>
+            }
+            <div class="row col-sm-12">
+                <div class="form-group label-floating">
+                    @Html.HiddenFor(model => model.JobID)
+                    @Html.HiddenFor(model => model.CreatedDate)
+                    <label class="control-label">1 - Talep Edilen İş</label>
+                    @Html.DropDownListFor(model => model.RequestedJob1, (IEnumerable<SelectListItem>)TempData["Job1"], string.Empty, new { id = "RequestedJob1", @class = "form-control" })
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label">2 - Talep Edilen İş</label>
+                    @Html.DropDownListFor(model => model.RequestedJob2, (IEnumerable<SelectListItem>)TempData["Job1"], string.Empty, new { id = "RequestedJob2", @class = "form-control" })
+                </div>
+                <div class="form-group label-floating">
+                    <label class="control-label">3 - Talep Edilen İş</label>
+                    @Html.DropDownListFor(model => model.RequestedJob3, (IEnumerable<SelectListItem>)TempData["Job1"], string.Empty, new { id = "RequestedJob3", @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wizard-footer">
+        <div class="pull-right">
+            <input type='submit' class='btn btn-info' name='next' value='KAYDET VE GÖNDER' />
+        </div>
+        <div class="pull-left">
+            <a href="@Url.Action(HRBussiness.Helper.PreviousSteps["JobInformation"].ActionName, HRBussiness.Helper.PreviousSteps["JobInformation"].ControllerName)"
+               class='btn btn-previous btn-info' name='previous'>ÖNCEKİ SAYFA</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+@section Scripts {
+
+}

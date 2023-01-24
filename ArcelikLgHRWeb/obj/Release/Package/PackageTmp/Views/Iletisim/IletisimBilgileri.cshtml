@@ -1,0 +1,108 @@
+﻿@model DAL.Models.ContactInformation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TempData.Keep("Cities");
+}
+
+
+    <div class="wizard-navigation">
+        <ul>
+            <li><a href="/Kullanici/KullaniciBilgileri" data-toggle="tab">KULLANICI BİLGİLERİ</a></li>
+            <li><a href="/Kisisel/KisiselBilgiler" data-toggle="tab">KİŞİSEL BİLGİLER</a></li>
+            <li class="active"><a id="contact" data-toggle="tab">İLETİŞİM BİLGİLERİ</a></li>
+            <li><a href="/Mezuniyet/MezuniyetBilgileri" data-toggle="tab">MEZUNİYET BİLGİLERİ</a></li>
+            <li><a href="/Calisma/CalismaBilgileri" data-toggle="tab">ÇALIŞMA BİLGİLERİ</a></li>
+            <li><a href="/Talep/TalepEdilenİsler" data-toggle="tab">TALEP EDİLEN İŞLER</a></li>
+        </ul>
+    </div>
+@using (Html.BeginForm("IletisimBilgileri", "Iletisim", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="tab-content">
+        <div class="tab-pane active" id="contactInfo">
+            @if (ViewBag.StepValidation != null)
+            {
+                <div class="row">
+                    <div class="alert alert-danger">
+                        <strong>Uyarı!</strong> @ViewBag.StepValidation
+                    </div>
+                </div>
+            }
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <input type="hidden" value="@Model.TownOfHomeAddress" id="TownOfHomeAdress"/>
+                   <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label is-focused ">Ev Adresi<span class="notNull"> *</span></label>
+                            @Html.TextBoxFor(model => model.HomeAddress, new { @class = "form-control" })
+                        </div>
+                    </div><div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Ev Adresi (il)<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.ProvinceOfHomeAddress, (IEnumerable<SelectListItem>)TempData["Cities"], string.Empty, new { @class = "form-control", @id = "dlCity" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group">
+                            <label class="control-labe label-floating">Ev Adresi (ilçe)<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.TownOfHomeAddress, new List<SelectListItem>(), string.Empty, new { @class = "form-control ", @id = "dlDisct" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Ev Telefonu (örn.02162223333)<span class="notNull"></span></label>
+                            @Html.TextBoxFor(model => model.HomePhone, new { @maxlength = 11, @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wizard-footer">
+        <div class="pull-right">
+            <input id="btnSaveContact" type='submit' class='btn btn-next btn-fill btn-danger btn-wd btnColor' name='next' value='SONRAKİ SAYFA' onclick="" style="background-color:#00bcd4" />
+        </div>
+        <div class="pull-left">
+            <a href="@Url.Action(HRBussiness.Helper.PreviousSteps["ContactInformation"].ActionName,HRBussiness.Helper.PreviousSteps["ContactInformation"].ControllerName)"
+               class='btn btn-previous btn-info' name='previous'>ÖNCEKİ SAYFA</a>
+            @*<input id="btnPrevContact" type='button' class='btn btn-previous btn-fill btn-default btn-wd btnColor' name='previous' value='ÖNCEKİ SAYFA' style="background-color:#00bcd4" />*@
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+
+@section Scripts {
+    <script src="~/Scripts/contact.js"></script>
+    <script>
+        $(document).ready(function () {
+            LoadDiscts();
+            $("#dlCity").change(function () {
+                $("#dlDisct").find('option').remove().end();
+                $.getJSON("/Iletisim/GetDistricts?CityName=" + $(this).find("option:selected").text(), null, function (data, i) {
+                    $.each(data, function (i, item) {
+                        $("#dlDisct").append("<option value = " + item.Value + ">" + item.Text + "</option>");
+                    })
+                });
+            });
+        });
+        $(".phone").keyup(function () {
+            $(this).val($(this).val().replace(/^(\d{3})(\d{3})(\d)+$/, "($1)$2-$3"))
+        });
+        function LoadDiscts() {
+            if ($("#dlCity option:selected").length >= 0) {
+                $.getJSON("/Iletisim/GetDistricts?CityName=" + $("#dlCity").find("option:selected").text(), null, function (data, i) {
+                    $.each(data, function (i, item) {
+                        if (item.Value != $("#TownOfHomeAdress").val()) {
+                            $("#dlDisct").append("<option value = " + item.Value + ">" + item.Text + "</option>");
+                        } else {
+                            $("#dlDisct").append("<option value = " + item.Value + " selected='selected'>" + item.Text + "</option>");
+                        }
+
+                    })
+                });
+            }
+        }
+    </script>
+}

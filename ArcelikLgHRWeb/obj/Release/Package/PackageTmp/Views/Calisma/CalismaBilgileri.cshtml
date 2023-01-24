@@ -1,0 +1,125 @@
+﻿@model DAL.Models.WorkInformation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int sayac = 0;
+    TempData.Keep("YesNoQuestion");
+}
+
+@using (Html.BeginForm("CalismaBilgileri", "Calisma", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.WorkID)
+    <div class="wizard-navigation">
+        <ul>
+            <li><a href ="/Kullanici/KullaniciBilgileri" data-toggle="tab">KULLANICI BİLGİLERİ</a></li>
+            <li><a href="/Kisisel/KisiselBilgiler" data-toggle="tab">KİŞİSEL BİLGİLER</a></li>
+            <li><a href="/Iletisim/IletisimBilgileri" data-toggle="tab">İLETİŞİM BİLGİLERİ</a></li>
+            <li><a href="/Mezuniyet/MezuniyetBilgileri" data-toggle="tab">MEZUNİYET BİLGİLERİ</a></li>
+            <li class="active"><a id="work" data-toggle="tab">ÇALIŞMA BİLGİLERİ</a></li>
+            <li><a href="/Talep/TalepEdilenİsler" data-toggle="tab">TALEP EDİLEN İŞLER</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane active " id="workInfo">
+            @if (ViewBag.StepValidation != null)
+            {
+                <div class="row">
+                    <div class="alert alert-danger">
+                        <strong>Uyarı!</strong> @ViewBag.StepValidation
+                    </div>
+                </div>
+            }
+            <div class="pull-center">
+                <div class="col-sm-12">
+                    @Html.HiddenFor(X => X.CreatedDate)
+                    <div class="form-group label-floating">
+                        <label class="control-label">Hala çalışıyor musunuz?</label>
+                        @Html.DropDownListFor(model => model.IsStillWorking, (IEnumerable<SelectListItem>)TempData["YesNoQuestion"], string.Empty, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group label-floating" id="important">
+                        <label class="control-label" style="color:red; font-size:12px; margin-bottom:auto;">Önemli:Seçiminiz evet ise iş yeri bilgilerini girmelisiniz.</label>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="border-center">
+                        @foreach (var item in Model.WorkExperience)
+                        {
+                            @Html.Hidden(string.Format("WorkExperience[{0}].WorkID", sayac), item.WorkID)
+                            @Html.Hidden(string.Format("WorkExperience[{0}].WorkExperienceID", sayac), item.WorkExperienceID)
+                            <div class="col-sm-12" style="margin:0px auto;">
+                                <div class="row borderx">
+                                    <div class="form-group label-floating col-sm-3">
+                                        <label class="control-label">Kurum/İşyeri Adı</label>
+                                        @Html.TextBox(string.Format("WorkExperience[{0}].WorkPlaceName", sayac), item.WorkPlaceName, new { @class = "form-control", @id = string.Format("txtWorkPlace{0}", sayac) })
+                                    </div>
+                                    <div class="form-group label-floating col-sm-2">
+                                        <label class="control-label">Göreviniz</label>
+                                        @Html.TextBox(string.Format("WorkExperience[{0}].Position", sayac), item.Position, new { @class = "form-control", @id = string.Format("txtPosition{0}", sayac) })
+                                    </div>
+                                    <div class="form-group label-floating col-sm-2">
+                                        <label class="control-label">Giriş yılı</label>
+                                        @{
+                                    var res = new List<SelectListItem>((IEnumerable<SelectListItem>)TempData["BeginDateToWork"]);
+                                    string beginDate = Model.WorkExperience.ToArray()[sayac].BeginDateToWork;
+
+                                    if (!string.IsNullOrEmpty(beginDate))
+                                    {
+                                        var bdate = res.FirstOrDefault(X => X.Value.Equals(beginDate));
+                                        if (bdate != null)
+                                        {
+                                            bdate.Selected = true;
+                                        }
+
+                                    }
+                                        }
+                                        @Html.DropDownList(string.Format("WorkExperience[{0}].BeginDateToWork", sayac), res, string.Empty, new { @class = "form-control", @id = string.Format("txtBeginDateToWork{0}", sayac) })
+                                    </div>
+                                    <div class="form-group label-floating col-sm-2">
+                                        <label class="control-label">Çıkış yılı</label>
+                                        @{
+                                   var resEnd = new List<SelectListItem>((IEnumerable<SelectListItem>)TempData["EndDateToWork"]);
+                                   string endDate = Model.WorkExperience.ToArray()[sayac].EndDateToWork;
+                                     if (!string.IsNullOrEmpty(endDate))
+                                     {
+                                        var edate = resEnd.FirstOrDefault(X => X.Value.Equals(endDate));
+                                         if (edate != null)
+                                         {
+                                             edate.Selected = true;
+                                         }
+                                      }
+                                        }
+                                        @Html.DropDownList(string.Format("WorkExperience[{0}].EndDateToWork", sayac), resEnd, string.Empty, new { @class = "form-control", @id = string.Format("txtEndDateToWork{0}", sayac) })
+                                    </div>
+                                    <div class="form-group label-floating col-sm-3">
+                                        <label class="control-label">Ayrılış Sebebi</label>
+                                        @Html.TextBox(string.Format("WorkExperience[{0}].FireReasonFromLastJob", sayac++), item.FireReasonFromLastJob, new { @class = "form-control", @id = string.Format("txtfireReasonFromLastJob{0}", sayac) })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="row col-sm-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Son işyerinden çıkış tarihiniz?</label>
+                            @Html.TextBoxFor(X => X.FireDateOfLastJob, new { @class = "form-control DatePicker", @id = "FireDateOfLastJob" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wizard-footer">
+        <div class="pull-right">
+            <input id="btnSaveWork" type="submit" class="btn btn-next btn-info" name="next" value="SONRAKİ SAYFA" />
+        </div>
+        <div class="pull-left">
+            <a href="@Url.Action(HRBussiness.Helper.PreviousSteps["WorkInformation"].ActionName,HRBussiness.Helper.PreviousSteps["WorkInformation"].ControllerName)"
+               class='btn btn-previous btn-info' name='previous'>ÖNCEKİ SAYFA</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+@section scripts {
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/personal.js"></script>
+}

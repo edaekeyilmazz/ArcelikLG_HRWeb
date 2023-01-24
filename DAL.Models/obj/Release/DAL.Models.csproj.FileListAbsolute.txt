@@ -1,0 +1,9 @@
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\DAL.Models.dll.config
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\DAL.Models.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\DAL.Models.pdb
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\EntityFramework.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\EntityFramework.SqlServer.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\EntityFramework.xml
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\bin\Release\EntityFramework.SqlServer.xml
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\obj\Release\DAL.Models.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\DAL.Models\obj\Release\DAL.Models.pdb

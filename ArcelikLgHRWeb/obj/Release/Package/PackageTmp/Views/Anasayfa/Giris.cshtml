@@ -1,0 +1,154 @@
+﻿@using hbehr.recaptcha;
+@model ArcelikLgHRWeb.Models.LoginViewModel
+
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="~/Contents/arceliklgLogo.ico" />
+    <title>ARÇELİK - LG Saha Çalışanı Personel Başvurusu</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/css/material-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="~/Contents/css/demo.css" rel="stylesheet" />
+    <link href="~/Contents/css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="image-container set-full-height" style="background-image: url('../../img/maviyaka.PNG');">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <!--      Wizard container        -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="blue" id="wizard">
+                            <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+                            <div class="wizard-header">
+                                <h3 class="wizard-title">
+                                    İş Başvurusu
+                                </h3>
+                                <h5>ARÇELİK - LG 'ye Mavi Yakalı Personel Başvurusu İçin Hoşgeldiniz!</h5>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+                                    <li><a href="#Entry" data-toggle="tab">GİRİŞ</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="Entry">
+                                    <h5 class="text-center"><b>Başvuru Yapacak Adayda Bulunması Gereken Genel Koşullar</b></h5>
+                                    <ul class="unorderList">
+                                        <li>Belirli Süreli İş Sözleşmesi ile çalışacak.</li>
+                                        <li>18 - 35 yaşları arasında olmak</li>
+                                        <li> MYO, Lise, Teknik Lise ve Endüstri Meslek Liselerinin ilgili bölümlerinden mezun olmak.</li>
+                                        <li>Yukarıda sayılan okullardan mezun olunmamasına rağmen başvurulan pozisyonlara uygun belge sahibi (Forklift, Kaynak, Bakım, Kalite ve Yapılacak İşle İlgili Mesleki Eğitim, Kalfalık, Ustalık Belgesi) olanların iş başvuruları da şirketimizin bu işlere olan ihtiyaçları çerçevesinde değerlendirmeye alınır.</li>
+                                        <li>Vardiyalı çalışmayı kabul etmek.</li>
+                                        <li>Personel servislerine uygun ikamet (İzmit Yahya Kaptan – Bostancı arasında E-5 ve Gebze, Çayırova, Darıca semt içi ana yol güzergahında)</li>
+                                        <li>Çalışmasına engel sağlık sorunu olmamak (İşe giriş işlemleri sırasında sağlık tetkiklerinden geçebilmek)</li>
+                                        <li>Askerliği en az 1 yıl tecilli olmak</li>
+                                        <li>Başvuru Sistemine İlişkin Açıklamalar:</li>
+                                        <li>Kırmızı alanlara bilgi girilmesi zorunludur, bu alanlar doldurulmadan başvuru kaydı yapılamaz</li>
+                                        <li>Liste bağlı alanlardaki bilgiyi silmek için ilgili alan üzerine gidip sonra da DELETE tuşuna basınız (bu işlem zorunlu alanlarda çalışmaz).</li>
+                                        <li>Başvuru Formu 6 bölümden oluşmaktadır. Lütfen girdiğiniz bilginin tamamını kontrol ettikten sonra GÖNDER tuşuna basınız.</li>
+                                        <li>GÖNDER tuşuna basılıp, kayıt işlemi gerçekleştiğinde ekrana başvuru numaranız ile birlikte başvuru süreci açıklaması gelir</li>
+                                        <li>Daha önce girilmiş TC Kimlik Numarası için yeni bir kayıt oluşturulamaz. Bilgilerinizde değişiklik olması durumunda veya başvuru tarihini yenilemek istediğinizde, DEĞİŞİKLİK seçeneğinden işlem yapmalısınız.</li>
+                                        <li>Hatalı girilen TC Kimlik Numarasını değiştirmek için yeni bir başvuru kaydı girilmelidir</li>
+                                        <li>Lütfen, şirketimize iş başvurusunda bulunmak için ayrıca e-posta, faks veya mektup göndermeyiniz.</li>
+                                        <li>Başvuru formunu dikkatlice doldurmanızı rica ederiz. Yanlış bilgi girilmesi halinde başvurunuz dikkate alınmayacaktır.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wizard-footer">
+                                <div class="text-center">
+                                    <a href="#" class='btn btn-info' id="btnShowModal" name='previous'>GİRİŞ YAP</a>
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <label class="lblKayitOl">Kayıt olmadınız mı? </label><a href="/Kayit/KayitIslemi" class="lnkKayitOl">Kayıt Ol</a>
+                                </div>
+                                <!--Modal Pop up-->
+                                <div class="modal fade" tabindex="-1" id="loginmodal" data-keyboard="false" data-backdrop="static">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modalHeader">
+                                                <button type="button" class="close" id="btnHideModal" data-dismiss="modal">&times;</button>
+                                                <h4 class="h4Header">Arçelik - LG</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="tab-content">
+                                                        <div class="col-md-2"></div>
+                                                        @using (Html.BeginForm("Giris", "Anasayfa", FormMethod.Post, new { id = "loginForm" }))
+                                                        {
+                                                            @Html.AntiForgeryToken();
+                                                            <div class="col-md-8">
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                        <i class="material-icons">perm_identity</i>
+                                                                    </span>
+                                                                    @Html.TextBoxFor(X => X.TCNo, new { placeholder = "TC Kimlik Numaranızı Giriniz", @class = "form-control" })
+                                                                </div>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon">
+                                                                        <i class="material-icons">lock_outline</i>
+                                                                    </span>
+
+                                                                    @Html.PasswordFor(X => X.Password, new { placeholder = "Şifrenizi giriniz", @class = "form-control" })
+                                                                </div>
+                                                                @ReCaptcha.GetCaptcha(ReCaptchaLanguage.Turkish)
+                                                                <div>
+                                                                    @Html.ValidationSummary()
+                                                                </div>
+                                                                <div class="col-sm-12 text-center">
+                                                                    <input type="submit" class='btn btn-info ' id="btnGiris" name="btnGiris" value='GİRİŞ YAP' />
+                                                                </div>
+                                                                <div class="col-sm-12 text-center" style="padding-top:20px;">
+                                                                    Şifrenizi mi unuttunuz ?
+                                                                    <div>
+                                                                        <a href="Anasayfa/SMSGonder">Mesaj ile gönder</a>
+                                                                        <a href="Anasayfa/EmailGonder" style="margin-left:20px;">E-mail ile gönder</a>
+                                                                    </div>
+                                                                    <hr />
+                                                                </div>
+                                                                <div class="col-sm-12 text-center">
+                                                                    <label class="lblKayitOl">Kayıt olmadınız mı? </label><a href="/Kayit/KayitIslemi" class="lnkKayitOl">Kayıt Ol</a>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        <div class="col-md-2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Modal Pop up End-->
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div> <!-- wizard container -->
+                </div>
+            </div> <!-- row -->
+        </div> <!--  big container -->
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="~/Scripts/jquery-2.2.4.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.bootstrap.js"></script>
+<script src="~/Scripts/material-bootstrap-wizard.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/login.js"></script>
+@if (IsPost)
+{
+    <script>
+        $(function () {
+            $("#loginmodal").modal('show');
+        })
+    </script>
+}

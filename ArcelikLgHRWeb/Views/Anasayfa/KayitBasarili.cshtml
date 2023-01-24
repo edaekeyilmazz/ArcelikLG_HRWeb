@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="~/Contents/arceliklgLogo.ico" />
+    <title>ARÇELİK - LG Saha Çalışanı Personel Başvurusu</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/css/material-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="~/Contents/css/demo.css" rel="stylesheet" />
+    <link href="~/Contents/css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="image-container set-full-height" style="background-image: url('../../img/maviyaka.PNG');">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <!--      Wizard container        -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="blue" id="wizard">
+                            <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+                            <div class="wizard-header">                             
+                                <h5>Başvurunuz başarıyla alınmıştır.</h5>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+                                    <li><a href="#Entry" data-toggle="tab">Başvuru Sonucu</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="Entry">   
+                                        <div class="col-sm-6 col-sm-offset-3 ">
+                                            <div class="choice active" data-toggle="wizard-radio" rel="tooltip">
+                                                <input type="radio" name="job" value="Code">
+                                                <div class="icon">
+                                                    <i class="material-icons">done</i>
+                                                </div>                                         
+                                            </div>
+                                        </div>                                  
+                                </div>
+                            </div>
+                            <div class="wizard-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="~/Scripts/jquery-2.2.4.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.bootstrap.js"></script>
+<script src="~/Scripts/material-bootstrap-wizard.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/login.js"></script>
+
+

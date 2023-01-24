@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfStep>
+  <Step>
+    <ID>1</ID>
+    <Order>1</Order>
+    <StepName>User Information</StepName>
+    <ControllerName>AnaSayfa</ControllerName>
+    <ActionName>UserInformation</ActionName>
+    <IsValid>true</IsValid>
+  </Step>
+  <Step>
+    <ID>2</ID>
+    <Order>2</Order>
+    <StepName>Personal Information</StepName>
+    <ControllerName>AnaSayfa</ControllerName>
+    <ActionName>PersonalInformation</ActionName>
+    <IsValid>true</IsValid>
+  </Step>
+  <Step>
+    <ID>3</ID>
+    <Order>3</Order>
+    <StepName>Contact Information</StepName>
+    <ControllerName>AnaSayfa</ControllerName>
+    <ActionName>ContactInformation</ActionName>
+    <IsValid>true</IsValid>
+  </Step>
+  <Step>
+    <ID>4</ID>
+    <Order>5</Order>
+    <StepName>Graduation Information</StepName>
+    <ControllerName>AnaSayfa</ControllerName>
+    <ActionName>GraduationInformation</ActionName>
+    <IsValid>true</IsValid>
+  </Step>
+  <Step>
+    <ID>5</ID>
+    <Order>5</Order>
+    <StepName>Work Information</StepName>
+    <ControllerName>AnaSayfa</ControllerName>
+    <ActionName>WorkInformation</ActionName>
+    <IsValid>true</IsValid>
+  </Step>
+  <Step>
+    <ID>6</ID>
+    <Order>6</Order>
+    <StepName>Job Information</StepName>
+    <ControllerName>AnaSayfa</ControllerName>
+    <ActionName>JobInformation</ActionName>
+    <IsValid>true</IsValid>
+  </Step>
+</ArrayOfStep>

@@ -1,0 +1,25 @@
+﻿@using hbehr.recaptcha;
+@{
+    ViewBag.Title = "SMSGonder";
+    Layout = "~/Views/Shared/_LayoutMessage.cshtml";
+}
+
+@using (Html.BeginForm("SMSGonder", "Anasayfa", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="text-center">
+        <div class="input">
+            <div class="form-group label-floating">
+                <label class="control-label">TCNo <span class="notNull"> *</span></label>
+                <input type="text" id="tcKimlikNo" name="tcKimlikNo" class="form-control" />
+            </div>
+        </div>
+        @*@ReCaptcha.GetCaptcha(ReCaptchaLanguage.Turkish)*@
+        <div>
+            @Html.ValidationSummary()
+        </div>
+        <div class="col-sm-12 text-center">
+            <input type="submit" class='btn btn-info ' id="btnGiris" name="btnGiris" value='GİRİŞ YAP' />
+        </div>
+    </div>
+}

@@ -1,0 +1,138 @@
+﻿@model DAL.Models.GraduationInformation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TempData.Keep("HighSchoolProvince");
+    TempData.Keep("HighSchoolType");
+    TempData.Keep("Years");
+    TempData.Keep("UniversityName");
+    TempData.Keep("UniversityProvince");
+    TempData.Keep("MYOName");
+    TempData.Keep("DepartmentName");
+}
+<div class="wizard-navigation">
+    <ul>
+        <li><a href="/Kullanici/KullaniciBilgileri" data-toggle="tab">KULLANICI BİLGİLERİ</a></li>
+        <li><a href="/Kisisel/KisiselBilgiler" data-toggle="tab">KİŞİSEL BİLGİLER</a></li>
+        <li><a href="/Iletisim/IletisimBilgileri" data-toggle="tab">İLETİŞİM BİLGİLERİ</a></li>
+        <li class="active"><a data-toggle="tab">MEZUNİYET BİLGİLERİ</a></li>
+        <li><a href="/Calisma/CalismaBilgileri" data-toggle="tab">ÇALIŞMA BİLGİLERİ</a></li>
+        <li><a href="/TalepEdilenIsler/TalepEdilenIsler" data-toggle="tab">TALEP EDİLEN İŞLER</a></li>
+    </ul>
+</div>
+@using (Html.BeginForm("MezuniyetBilgileri", "Mezuniyet", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="tab-content">
+        <div class="tab-pane active" id="graduateInfo">
+            @if (ViewBag.StepValidation != null)
+            {
+                <div class="row">
+                    <div class="alert alert-danger">
+                        <strong>Uyarı!</strong> @ViewBag.StepValidation
+                    </div>
+                </div>
+            }
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            @*@Html.HiddenFor(model => model.GraduateID)
+                                @Html.HiddenFor(model => model.CreatedDate)*@
+                            <label class="control-label">Lise Adı<span class="notNull"> *</span></label>
+                            @Html.TextBoxFor(model => model.HighSchoolName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">İl<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.HighSchoolProvince, (IEnumerable<SelectListItem>)TempData["HighSchoolProvince"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Lise Tipi<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.HighSchoolType, (IEnumerable<SelectListItem>)TempData["HighSchoolType"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Bölüm Adı<span class="notNull"> *</span></label>
+                            @Html.TextBoxFor(model => model.HighSchoolDepartment, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Diploma Notu</label>
+                            @Html.TextBoxFor(model => model.HighSchoolDiplomaDegree, new {@type="number", @min="0", @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Mezuniyet Yılı</label>
+                            @Html.DropDownListFor(model => model.HighSchoolGraduationYear, (IEnumerable<SelectListItem>)TempData["Years"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Üniversite Adı<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.UniversityName, (IEnumerable<SelectListItem>)TempData["UniversityName"], string.Empty, new { @class = "form-control", id = "ddlUniversityName" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Üniversite Adı (Diğer)<span class="notNull"> *</span></label>
+                            @Html.TextBoxFor(model => model.OtherUniversityName, new { @class = "form-control", id = "txtOtherUniversityName" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">İl<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.UniversityProvince, (IEnumerable<SelectListItem>)TempData["UniversityProvince"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">MYO Adı<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.MYOName, (IEnumerable<SelectListItem>)TempData["MYOName"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Bölüm Adı<span class="notNull"> *</span></label>
+                            @Html.DropDownListFor(model => model.DepartmentName, (IEnumerable<SelectListItem>)TempData["DepartmentName"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Diploma Notu</label>
+                            @Html.TextBoxFor(model => model.UniversityDiplomaDegree, new { @type = "number", @min = "0", @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Mezuniyet Yılı</label>
+                            @Html.DropDownListFor(model => model.UniversityGraduationYear, (IEnumerable<SelectListItem>)TempData["Years"], string.Empty, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wizard-footer">
+        <div class="pull-right">
+            <input id="btnSaveGraduate" type='submit' class='btn btn-next btn-fill btn-danger btn-wd btnColor' name='next' value='SONRAKİ SAYFA' onclick="" style="background-color:#00bcd4" />
+        </div>
+        <div class="pull-left">
+            <a href="@Url.Action(HRBussiness.Helper.PreviousSteps["GraduationInformation"].ActionName,HRBussiness.Helper.PreviousSteps["GraduationInformation"].ControllerName)"
+               class='btn btn-previous btn-info' name='previous'>ÖNCEKİ SAYFA</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+@section Scripts {
+    <script src="~/Scripts/graduation.js"></script>
+
+}

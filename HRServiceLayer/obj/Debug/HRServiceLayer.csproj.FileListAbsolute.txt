@@ -1,0 +1,9 @@
+C:\TFS\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\bin\Debug\HRServiceLayer.dll
+C:\TFS\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\bin\Debug\HRServiceLayer.pdb
+C:\TFS\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Debug\HRServiceLayer.dll
+C:\TFS\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Debug\HRServiceLayer.pdb
+C:\TFS\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Debug\HRServiceLayer.csprojResolveAssemblyReference.cache
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\bin\Debug\HRServiceLayer.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\bin\Debug\HRServiceLayer.pdb
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Debug\HRServiceLayer.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Debug\HRServiceLayer.pdb

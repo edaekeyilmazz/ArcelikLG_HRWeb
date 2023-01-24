@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\HRPublish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/ArcelikLgHRWeb.dll">
+      <publishTime>02/05/2018 10:17:36</publishTime>
+    </File>
+    <File Include="bin/BioteknoSmsXmlHelper.dll">
+      <publishTime>11/28/2017 14:08:15</publishTime>
+    </File>
+    <File Include="bin/DAL.dll">
+      <publishTime>02/05/2018 10:17:34</publishTime>
+    </File>
+    <File Include="bin/DAL.Models.dll">
+      <publishTime>02/05/2018 10:17:34</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/18/2018 15:39:37</publishTime>
+    </File>
+    <File Include="bin/hbehr.recaptcha.dll">
+      <publishTime>02/02/2018 14:04:36</publishTime>
+    </File>
+    <File Include="bin/HRBussiness.dll">
+      <publishTime>02/05/2018 10:17:35</publishTime>
+    </File>
+    <File Include="bin/HRMessageService.dll">
+      <publishTime>02/05/2018 10:17:35</publishTime>
+    </File>
+    <File Include="bin/HRServiceLayer.dll">
+      <publishTime>02/05/2018 10:17:34</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/02/2018 15:48:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/18/2018 18:13:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/18/2018 16:03:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/18/2018 18:13:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/18/2018 18:13:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/18/2018 18:13:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/18/2018 18:13:31</publishTime>
+    </File>
+    <File Include="Contents/css/bootstrap.min.css">
+      <publishTime>01/18/2018 18:24:30</publishTime>
+    </File>
+    <File Include="Contents/css/demo.css">
+      <publishTime>01/30/2018 10:44:19</publishTime>
+    </File>
+    <File Include="Contents/css/index.css">
+      <publishTime>02/02/2018 16:12:44</publishTime>
+    </File>
+    <File Include="Contents/css/jquery-ui.min.css">
+      <publishTime>01/31/2018 11:54:46</publishTime>
+    </File>
+    <File Include="Contents/css/material-bootstrap-wizard.css">
+      <publishTime>01/18/2018 18:24:30</publishTime>
+    </File>
+    <File Include="Contents/css/registry.css">
+      <publishTime>02/01/2018 10:47:52</publishTime>
+    </File>
+    <File Include="Contents/images/ui-icons_444444_256x240.png">
+      <publishTime>01/31/2018 11:28:47</publishTime>
+    </File>
+    <File Include="Contents/images/ui-icons_555555_256x240.png">
+      <publishTime>01/31/2018 11:28:47</publishTime>
+    </File>
+    <File Include="Contents/images/ui-icons_777620_256x240.png">
+      <publishTime>01/31/2018 11:28:47</publishTime>
+    </File>
+    <File Include="Contents/images/ui-icons_777777_256x240.png">
+      <publishTime>01/31/2018 11:28:47</publishTime>
+    </File>
+    <File Include="Contents/images/ui-icons_cc0000_256x240.png">
+      <publishTime>01/31/2018 11:28:47</publishTime>
+    </File>
+    <File Include="Contents/images/ui-icons_ffffff_256x240.png">
+      <publishTime>01/31/2018 11:28:47</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/18/2018 14:50:26</publishTime>
+    </File>
+    <File Include="img/arceliklgLogo.ico">
+      <publishTime>01/18/2018 18:30:18</publishTime>
+    </File>
+    <File Include="img/arcelikLogo.png">
+      <publishTime>01/18/2018 18:30:18</publishTime>
+    </File>
+    <File Include="img/maviyaka.PNG">
+      <publishTime>01/18/2018 18:30:18</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/02/2018 15:48:40</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>01/18/2018 18:23:23</publishTime>
+    </File>
+    <File Include="Scripts/contact.js">
+      <publishTime>01/31/2018 14:40:54</publishTime>
+    </File>
+    <File Include="Scripts/graduation.js">
+      <publishTime>02/02/2018 16:10:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.4.min.js">
+      <publishTime>01/18/2018 18:23:23</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>01/31/2018 11:38:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery.bootstrap.js">
+      <publishTime>01/18/2018 18:23:23</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>01/18/2018 18:23:23</publishTime>
+    </File>
+    <File Include="Scripts/login.js">
+      <publishTime>01/31/2018 16:02:27</publishTime>
+    </File>
+    <File Include="Scripts/material-bootstrap-wizard.js">
+      <publishTime>01/18/2018 18:23:23</publishTime>
+    </File>
+    <File Include="Scripts/modal.js">
+      <publishTime>01/26/2018 14:34:39</publishTime>
+    </File>
+    <File Include="Scripts/personal.js">
+      <publishTime>02/05/2018 09:09:23</publishTime>
+    </File>
+    <File Include="Scripts/registry.js">
+      <publishTime>02/05/2018 09:16:24</publishTime>
+    </File>
+    <File Include="Scripts/wizard.js">
+      <publishTime>01/22/2018 12:40:27</publishTime>
+    </File>
+    <File Include="Views/Anasayfa/EmailGonder.cshtml">
+      <publishTime>02/05/2018 09:05:10</publishTime>
+    </File>
+    <File Include="Views/Anasayfa/Giris.cshtml">
+      <publishTime>02/02/2018 17:41:48</publishTime>
+    </File>
+    <File Include="Views/Anasayfa/KayitBasarili.cshtml">
+      <publishTime>02/02/2018 09:12:44</publishTime>
+    </File>
+    <File Include="Views/Anasayfa/SMSGonder.cshtml">
+      <publishTime>02/02/2018 18:16:54</publishTime>
+    </File>
+    <File Include="Views/Calisma/CalismaBilgileri.cshtml">
+      <publishTime>02/05/2018 09:24:22</publishTime>
+    </File>
+    <File Include="Views/Error/HttpError404.cshtml">
+      <publishTime>02/02/2018 16:10:16</publishTime>
+    </File>
+    <File Include="Views/Error/HttpError500.cshtml">
+      <publishTime>02/02/2018 16:10:16</publishTime>
+    </File>
+    <File Include="Views/Error/HttpGeneral.cshtml">
+      <publishTime>02/02/2018 16:10:16</publishTime>
+    </File>
+    <File Include="Views/Iletisim/IletisimBilgileri.cshtml">
+      <publishTime>02/02/2018 14:22:36</publishTime>
+    </File>
+    <File Include="Views/Kayit/KayitIslemi.cshtml">
+      <publishTime>02/05/2018 09:16:02</publishTime>
+    </File>
+    <File Include="Views/Kisisel/KisiselBilgiler.cshtml">
+      <publishTime>02/05/2018 09:28:55</publishTime>
+    </File>
+    <File Include="Views/Kullanici/KullaniciBilgileri.cshtml">
+      <publishTime>02/05/2018 09:28:01</publishTime>
+    </File>
+    <File Include="Views/Mezuniyet/MezuniyetBilgileri.cshtml">
+      <publishTime>02/05/2018 09:30:06</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>02/05/2018 10:14:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutError.cshtml">
+      <publishTime>02/02/2018 16:10:16</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutMessage.cshtml">
+      <publishTime>02/02/2018 17:57:49</publishTime>
+    </File>
+    <File Include="Views/TalepEdilenIsler/TalepEdilenIsler.cshtml">
+      <publishTime>02/05/2018 09:26:05</publishTime>
+    </File>
+    <File Include="Views/ViewPage1.cshtml">
+      <publishTime>01/18/2018 16:03:09</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>01/26/2018 11:13:18</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/05/2018 10:17:37</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

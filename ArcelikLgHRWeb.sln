@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcelikLgHRWeb", "ArcelikLgHRWeb\ArcelikLgHRWeb.csproj", "{26934A76-898C-4325-B71F-3EE2282B8D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{972678A7-9226-4D16-814C-3CC9A8C07D79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRBussiness", "HRBussiness\HRBussiness.csproj", "{EEBB0254-CBF9-4C10-87ED-97C8CBCA9DE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApp", "ConsoleTestApp\ConsoleTestApp.csproj", "{02EBBE17-7229-409C-9E66-285AE270EC78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.Models", "DAL.Models\DAL.Models.csproj", "{27216AD9-E001-4447-8918-D0AA72A17586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRServiceLayer", "HRServiceLayer\HRServiceLayer.csproj", "{59F31970-F781-44A7-9EFA-F795988E9A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRMessageService", "HRMessageService\HRMessageService.csproj", "{EB8F3FB2-655D-4FDD-9D0B-DCD922C0DFC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcelikLgHRWebTests", "ArcelikLgHRWebTests\ArcelikLgHRWebTests.csproj", "{21C0BD49-6E9D-415F-866E-086AC085C718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcelikLgHRWebControllersTest", "ArcelikLgHRWebControllersTest\ArcelikLgHRWebControllersTest.csproj", "{3E780749-7286-45BF-815D-5090853196CB}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.20.0.35:8080/tfs/musteriozel
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ArcelikLgHRWeb\\ArcelikLgHRWeb.csproj
+		SccProjectName1 = ArcelikLgHRWeb
+		SccLocalPath1 = ArcelikLgHRWeb
+		SccProjectUniqueName2 = DAL\\DAL.csproj
+		SccProjectName2 = DAL
+		SccLocalPath2 = DAL
+		SccProjectUniqueName3 = HRBussiness\\HRBussiness.csproj
+		SccProjectName3 = HRBussiness
+		SccLocalPath3 = HRBussiness
+		SccProjectUniqueName4 = ConsoleTestApp\\ConsoleTestApp.csproj
+		SccProjectName4 = ConsoleTestApp
+		SccLocalPath4 = ConsoleTestApp
+		SccProjectUniqueName5 = DAL.Models\\DAL.Models.csproj
+		SccProjectName5 = DAL.Models
+		SccLocalPath5 = DAL.Models
+		SccProjectUniqueName6 = HRServiceLayer\\HRServiceLayer.csproj
+		SccProjectName6 = HRServiceLayer
+		SccLocalPath6 = HRServiceLayer
+		SccProjectUniqueName7 = HRMessageService\\HRMessageService.csproj
+		SccProjectName7 = HRMessageService
+		SccLocalPath7 = HRMessageService
+		SccProjectUniqueName8 = ArcelikLgHRWebTests\\ArcelikLgHRWebTests.csproj
+		SccProjectName8 = ArcelikLgHRWebTests
+		SccLocalPath8 = ArcelikLgHRWebTests
+		SccProjectUniqueName9 = ArcelikLgHRWebControllersTest\\ArcelikLgHRWebControllersTest.csproj
+		SccProjectName9 = ArcelikLgHRWebControllersTest
+		SccLocalPath9 = ArcelikLgHRWebControllersTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26934A76-898C-4325-B71F-3EE2282B8D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26934A76-898C-4325-B71F-3EE2282B8D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26934A76-898C-4325-B71F-3EE2282B8D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26934A76-898C-4325-B71F-3EE2282B8D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{972678A7-9226-4D16-814C-3CC9A8C07D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972678A7-9226-4D16-814C-3CC9A8C07D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972678A7-9226-4D16-814C-3CC9A8C07D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972678A7-9226-4D16-814C-3CC9A8C07D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEBB0254-CBF9-4C10-87ED-97C8CBCA9DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEBB0254-CBF9-4C10-87ED-97C8CBCA9DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEBB0254-CBF9-4C10-87ED-97C8CBCA9DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEBB0254-CBF9-4C10-87ED-97C8CBCA9DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02EBBE17-7229-409C-9E66-285AE270EC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02EBBE17-7229-409C-9E66-285AE270EC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02EBBE17-7229-409C-9E66-285AE270EC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02EBBE17-7229-409C-9E66-285AE270EC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27216AD9-E001-4447-8918-D0AA72A17586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27216AD9-E001-4447-8918-D0AA72A17586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27216AD9-E001-4447-8918-D0AA72A17586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27216AD9-E001-4447-8918-D0AA72A17586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F31970-F781-44A7-9EFA-F795988E9A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F31970-F781-44A7-9EFA-F795988E9A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F31970-F781-44A7-9EFA-F795988E9A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F31970-F781-44A7-9EFA-F795988E9A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8F3FB2-655D-4FDD-9D0B-DCD922C0DFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8F3FB2-655D-4FDD-9D0B-DCD922C0DFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8F3FB2-655D-4FDD-9D0B-DCD922C0DFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8F3FB2-655D-4FDD-9D0B-DCD922C0DFC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C0BD49-6E9D-415F-866E-086AC085C718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C0BD49-6E9D-415F-866E-086AC085C718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C0BD49-6E9D-415F-866E-086AC085C718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C0BD49-6E9D-415F-866E-086AC085C718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E780749-7286-45BF-815D-5090853196CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E780749-7286-45BF-815D-5090853196CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E780749-7286-45BF-815D-5090853196CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E780749-7286-45BF-815D-5090853196CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

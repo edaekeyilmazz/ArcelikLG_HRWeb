@@ -1,0 +1,4 @@
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\bin\Release\HRServiceLayer.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\bin\Release\HRServiceLayer.pdb
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Release\HRServiceLayer.dll
+C:\TFS_Sources\ArcelikLG\ArcelikLG_HRWeb\HRServiceLayer\obj\Release\HRServiceLayer.pdb

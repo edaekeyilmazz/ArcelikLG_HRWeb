@@ -1,0 +1,54 @@
+﻿body {
+    background-color: black !important;
+}
+
+.indexHeader {
+    text-align: center;
+    margin-top: 10px;
+    color: #808080;
+    font-weight: 900;
+    margin-top: 30px;
+}
+
+.modalHeader {
+    text-align: center;
+    font-size: 30px;
+    padding: 35px 50px;
+    background-color: #00bcd4;
+}
+
+.lblKayitOl {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.lnkKayitOl {
+    margin-left: 15px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.h4Header {
+    margin: 0px auto;
+    color: white;
+}
+
+.lnkShowModal {
+    margin-left: 15px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.validationSummary {
+    color: red;
+}
+
+.validation-summary-errors ul li {
+    list-style: none;
+    color: red;
+    text-align: center;
+}
+
+.validation-summary-errors ul {
+    padding-left: 0px;
+}

@@ -1,0 +1,207 @@
+﻿@*@using hbehr.recaptcha;*@
+@model DAL.Models.UserInformation
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    @*<link rel="shortcut icon" href="~/Contents/arceliklgLogo.ico" />*@
+    <title>ARÇELİK - LG Saha Çalışanı Personel Başvurusu</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/css/material-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="~/Contents/css/demo.css" rel="stylesheet" />
+    <link href="~/Contents/css/registry.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm("KayitIslemi", "Kayit", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="image-container set-full-height" style="background-image: url('../../img/maviyaka.PNG');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <!--      Wizard container        -->
+                        <div class="wizard-container">
+                            <div class="card wizard-card" data-color="blue" id="wizard">
+                                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title">
+                                        İş Başvurusu
+                                    </h3>
+                                    <h5>ARÇELİK - LG 'ye Mavi Yakalı Personel Başvurusu İçin Hoşgeldiniz!</h5>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul class="nav nav-pills">
+                                        <li class="active"><a href="#register" data-toggle="tab">KAYIT</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="register">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="input">
+                                                    <div class="form-group label-floating" title="Lütfen 11 haneli T.C. kimlik numaranızı giriniz.">
+                                                        <label class="control-label">TC Kimlik No<span class="notNull"> *</span></label>
+                                                        @Html.TextBoxFor(model => model.TCNo, new { @class = "form-control", @maxlength = 11, data_message = "Bu alan boş geçilemez." })
+                                                    </div>
+                                                </div>
+                                                <div class="input">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Adınız<span class="notNull"> *</span></label>
+                                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", data_message = "Bu alan boş geçilemez.", onkeyup = "ToUpper(this)" })
+                                                    </div>
+                                                </div>
+                                                <div class="input">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Soyadınız<span class="notNull"> *</span></label>
+                                                        @Html.TextBoxFor(model => model.Surname, new { @class = "form-control", data_message = "Bu alan boş geçilemez.", onkeyup = "ToUpper(this)" })
+                                                    </div>
+                                                </div>
+                                                <div class="input" title="Lütfen 0 ile başlayan 11 haneli telefon numaranızı giriniz." data-original-title="Lütfen 0 ile başlayan 11 haneli telefon numaranızı giriniz.">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Cep Telefonu<span class="notNull"> *</span> (örn: 05324444444)</label>
+                                                        @Html.TextBoxFor(model => model.MobilePhone, new { @class = "form-control", @maxlength=11 })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="input">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Şifre<span class="notNull"> *</span></label>
+                                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", data_message = "Bu alan boş geçilemez." })
+                                                    </div>
+                                                </div>
+                                                <div class="input">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Şifre Tekrar<span class="notNull"> *</span></label>
+                                                        <input type="password" id="PasswordConfirm" name="PasswordConfirm" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="input">
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">E-Mail<span class="notNull"> *</span></label>
+                                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", data_message = "Bu alan boş geçilemez." })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wizard-footer">
+                                                <div class="footer-checkbox">
+                                                    <div class="col-sm-12">
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                @Html.CheckBoxFor(model => model.ContractStatus)
+                                                            </label>
+                                                            <a href="#" name="lnkContract" id="lnkContract">Arçelik-LG Çalışan Adayı Kişisel Verilerin İşlenmesi Aydınlatma ve Rıza Metni ile Referans Taahhüdünü okudum, onaylıyorum.</a>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            @Html.ValidationSummary()
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="wizard-footer">
+                                    <div class="text-center" >
+                                        @*@ReCaptcha.GetCaptcha(ReCaptchaLanguage.Turkish)*@
+                                        <button type="submit" class="btn btn-info" name="next" id="btnSaveChanges">KAYDET</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--Modal Pop up-->
+                                <div class="modal fade" tabindex="-1" id="popupContract" data-keyboard="false" data-backdrop="static">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="row"><button class="close btnHideContract" id="btnHideContract" data-dismiss="modal">&times;</button></div>
+                                                <div class="row">
+                                                    <div class="tab-content">
+                                                        <div class="row">
+                                                            <div class="addressHeader">
+                                                                <img src="~/img/arcelikLogo.png" />
+                                                            </div>
+                                                            <div class="addressRight">
+                                                                <p>
+                                                                    <b> Arçelik – LG Klima Sanayi ve Ticaret A.Ş.</b>
+                                                                    Gebze Organize Sanayi Bölgesi İhsan Dede Cad.
+                                                                    No: 139 41480 Gebze/KOCAELİ
+                                                                    Gebze Ticaret Odası, Ticaret Sicil No: 5337
+                                                                    Tel  :  (262) 678 78 78
+                                                                    Fax  : (262) 678 78 79
+                                                                    www.arcelik-lg.com.tr
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div>
+                                                                <h5 id="textCenter">ARÇELİK-LG KLİMA SANAYİ VE TİCARET ANONİM ŞİRKETİ</h5>
+                                                                <h5 id="textCenter">ÇALIŞAN ADAYI KİŞİSEL VERİLERİNİN İŞLENMESİ AYDINLATMA METNİ </h5>
+                                                                <b>a) Veri Sorumlusu ve Temsilcisi</b>
+                                                                <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (“6698 sayılı Kanun”) uyarınca, kişisel verileriniz; veri sorumlusu olarak Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi (“Şirket”) tarafından aşağıda açıklanan kapsamda işlenebilecektir.</p>
+                                                                <b>b) Kişisel Verilerin Hangi Amaçla İşleneceği </b>
+                                                                <p><b>Toplanan kişisel verileriniz, <i>kişisel verilerinizi bizlere açıklamanıza konu olan; iş başvuru talebinizin ve ilgili pozisyona uygunluğunuzun değerlendirilmesi çerçevesinde işe alım süreçlerinin yürütülmesi, sonuçlandırılması ve bu kapsamda sizinle veya bize referans olarak belirttiğiniz kişilerle iletişime geçilmesi, Şirketimiz insan kaynakları politikaları ve süreçlerinin planlanması ve icra edilmesi kapsamında; personel temin süreçlerinin yürütülmesi, üretim için gerekli olan insan kaynakları ihtiyaçlarının planlanması ve icrası, insan kaynakları süreçlerinin planlanması ve icrası, Şirket tarafından yürütülen ticari faaliyetlerin gerçekleştirilmesi için ilgili iş birimlerimiz tarafından gerekli çalışmaların yapılması ve buna bağlı iş süreçlerinin yürütülmesi kapsamında; iş sürekliliğinin sağlanması faaliyetlerinin planlanması ve/veya icrası</i> gibi amaçlarla veya benzer amaçlarla; 6698 sayılı Kanun’un 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları dahilinde işlenecektir.</b></p>
+                                                                <p>
+                                                                    <b>Kişisel verilerinizin Şirketimiz tarafından işlenme amaçları konusunda detaylı bilgilere; <a target="_blank" href="https://www.arcelik-lg.com.tr">https://www.arcelik-lg.com.tr</a>  internet adresinden kamuoyu ile paylaşılmış olan Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi Kişisel Verilerin Korunması ve İşlenmesi Politikasından ulaşabilirsiniz.</b>
+                                                                </p>
+
+                                                                <p><b>c) İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği</b></p>
+                                                                <p>
+                                                                    Toplanan kişisel verileriniz; yukarıda belirtilen amaçların gerçekleştirilmesi doğrultusunda; iş ortaklarımıza, hissedarlarımıza, tedarikçilerimize, bize referans olarak belirttiğiniz kişilere, kanunen yetkili kamu kurumlarına ve özel kişi veya kuruluşlar ile üçüncü kişilere ve yine bu amaçların yerine getirilmesi ile sınırlı olarak, koç holding A.Ş.’ye, Koç Holding a.ş. topluluk şirketleri’ne (topluluk şirketleri’nin tüm listesine şu linkten ulaşabilirsiniz: <a target="_blank" href="http://www.koc.com.tr/tr-tr/faaliyet-alanlari/sirketler">http://www.koc.com.tr/tr-tr/faaliyet-alanlari/sirketler</a>) 6698 sayılı Kanun’un 8. ve 9. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları çerçevesinde <b>Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi Kişisel Verilerin Korunması ve İşlenmesi Politikasında</b> belirtilen amaçlarla sınırlı olarak aktarılabilecek, yurtiçinde veya yurtdışında işlenebilecektir.
+                                                                </p>
+                                                                <p>
+                                                                    <b>ç) Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi </b>
+                                                                </p>
+
+                                                                <p>
+                                                                    Kişisel verileriniz Şirket tarafından farklı kanallar ve farklı hukuki sebeplere dayanarak fiziki ve/veya elektronik ortamlarda toplanmakta ve muhafaza edilmektedir. Kişisel verileriniz, size hak ve menfaatler sağlanması, Şirket içi faaliyetlerin sürdürülmesi ve geliştirilmesi ve mevzuattan doğan yükümlülüklerin yerine getirilmesi gibi hukuki sebeplere dayanılarak toplanmaktadır.
+                                                                </p>
+
+                                                                <p>
+                                                                    <b>d) Kişisel Veri Sahibinin 6698 sayılı Kanun’un 11. maddesinde Sayılan Hakları</b>
+                                                                </p>
+                                                                <p>
+                                                                    Kişisel veri sahipleri olarak, haklarınıza ilişkin taleplerinizi <a target="_blank" href="https://www.arcelik-lg.com.tr">https://www.arcelik-lg.com.tr</a> internet adresinden kamuoyu ile paylaşılmış olan Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi <b>Kişisel Verilerin Korunması ve İşlenmesi Politikasında</b> düzenlenen yöntemlerle Şirketimize iletmeniz durumunda Şirket talebin niteliğine göre talebi en kısa sürede ve en geç otuz gün içinde ücretsiz olarak sonuçlandıracaktır. Ancak, işlemin ayrıca bir maliyeti gerektirmesi hâlinde, Şirket tarafından Kişisel Verileri Koruma Kurulunca belirlenen tarifedeki ücret alınacaktır. Bu kapsamda kişisel veri sahipleri;
+                                                                </p><ul>
+                                                                    <li>Kişisel veri işlenip işlenmediğini öğrenme,</li>
+                                                                    <li>Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,</li>
+                                                                    <li> Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+                                                                    <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,</li>
+                                                                    <li> Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+                                                                    <li> 6698 sayılı Kanun ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+                                                                    <li> İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,</li>
+                                                                    <li>Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme haklarına sahiptir.</li>
+                                                                </ul>
+                                                                <p id="textCenter"><b>REFERANS TAAHHÜDÜ</b></p>
+                                                                <p>Referans olarak belirttiğim kişiler ile referans kontrolü yapılması amacıyla iletişime geçilebileceğini, kişisel verilerin Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi ile paylaşılabilmesine yönelik gerekli bilgilendirmenin yapıldığını/izinlerin alındığını taahhüt ederim. Bu doğrultuda referans olarak gösterdiğim kişilerin de benimle ilgili verdikleri tüm bilgilerin Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi tarafından işlenmesine izin veriyorum.</p>
+                                                                <p><b>ARÇELİK-LG KLİMA SANAYİ VE TİCARET ANONİM ŞİRKETİ ÇALIŞAN ADAYI KİŞİSEL VERİLERİNİN İŞLENMESİ RIZA METNİ </b></p>
+                                                                <p>Arçelik-LG Klima Sanayi ve Ticaret Anonim Şirketi tarafından; <b>insan kaynakları politikaları ve süreçlerinin planlanması ve icra edilmesi kapsamında</b>, personel temin süreçlerinin yürütülmesi, insan kaynakları süreçlerinin planlanması,  işe uygunluğumun ve yetkinliğimin objektif bir şekilde değerlendirilmesi ve sonuçlandırılması, <b>Şirket tarafından yürütülen ticari faaliyetlerin gerçekleştirilmesi için ilgili iş birimlerimiz tarafından gerekli çalışmaların yapılması ve buna bağlı iş süreçlerinin yürütülmesi kapsamında, iş sürekliliğinin sağlanması faaliyetlerinin planlanması ve/veya icrası gibi amaçlarla veya benzer amaçlarla kişisel verilerimin ve sağlık, ceza mahkumiyet bilgisi üyeliği gibi bilgiler başta olmak üzere özel nitelikli kişisel verilerimin</b> işlenmesini ve iş ortaklarımızla, hissedarlarımızla, tedarikçilerimizle, bize referans olarak belirttiğiniz kişilerle, kanunen yetkili kamu kurumları ve özel kişi veya kuruluşlar ile üçüncü kişilerle ve yine bu amaçların yerine getirilmesi ile sınırlı olarak Koç Holding A.Ş. ile Koç Holding A.Ş. Topluluk Şirketleri ile (Topluluk Şirketleri’nin tüm listesine şu linkten ulaşabilirsiniz: <a target="_blank" href="http://www.koc.com.tr/tr-tr/faaliyet-alanlari/sirketler">http://www.koc.com.tr/tr-tr/faaliyet-alanlari/sirketler</a>) ve <b>yurt içindeki veya yurt dışında dışarıdan hizmet alınan üçüncü kişilerle</b>, hizmet sağlayıcılarla paylaşılmasını kabul ediyorum.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+<script src="~/Scripts/jquery-2.2.4.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.bootstrap.js"></script>
+<script src="~/Scripts/material-bootstrap-wizard.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/registry.js"></script>

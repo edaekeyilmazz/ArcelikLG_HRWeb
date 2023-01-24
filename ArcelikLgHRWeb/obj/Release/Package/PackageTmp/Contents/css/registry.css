@@ -1,0 +1,74 @@
+﻿
+#table-condensed {
+    padding-left: 3px;
+    padding-bottom: 3px;
+}
+
+#workPlaceLabel {
+    color: red;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.important {
+    padding: 2px;
+}
+
+#form-group {
+    padding-bottom: 10px;
+}
+
+.borderx {
+    border: groove thin;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.col-sm-offset-1 {
+    margin-left: 2px;
+}
+
+.border-center {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+#modal-body {
+    padding: -10px;
+}
+
+#textCenter {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.notNull {
+    color: #00bcd4;
+}
+
+.btnHideContract {
+    margin-right: 15px;
+}
+
+.addressHeader {
+    float: left;
+    width: 50px;
+}
+
+.addressRight {
+    float: right;
+    width: 250px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.validation-summary-errors ul li {
+    list-style: none;
+    color: red;
+}
+
+.g-recaptcha div:first-child {
+    margin: 0 auto;
+}

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>ARÇELİK - LG Saha Çalışanı Personel Başvurusu</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    @*<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />*@
+    @*<link rel="icon" type="image/png" href="assets/img/favicon.png" />*@
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="~/Contents/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/css/material-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="~/Contents/css/demo.css" rel="stylesheet" />
+    <link href="~/Contents/css/index.css" rel="stylesheet" />
+    <link href="~/Contents/css/registry.css" rel="stylesheet" />
+    <link href="~/Contents/css/jquery-ui.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="image-container set-full-height" style="background-image: url('../../img/maviyaka.PNG');">
+        <!--   Big container   -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+
+                    <!--      Wizard container        -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="blue" id="wizard">
+                            <div class="row">
+                                <div class="dropdown" style="float:right; margin-right:20px;">
+                                    @*<input type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" value="@(UIHelper.UserInfo.Name + " " + UIHelper.UserInfo.Surname)" />*@
+                                    <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+                                        @(UIHelper.UserInfo.Name + " " + UIHelper.UserInfo.Surname)
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ol class="dropdown-menu">
+
+                                        <li>
+
+                                            <span class="input-group-addon">
+                                                <a id="logout" href="Anasayfa/Cikis">
+                                                    <i class="material-icons">lock_outline</i>
+                                                    Çıkış Yap
+                                                </a>
+                                            </span>
+                                        </li>
+                                        <li>
+
+                                            <span class="input-group-addon">
+                                                <a href="/Kullanici/KullaniciBilgileri">
+                                                    <i class="material-icons">perm_identity</i>
+                                                    Hesabım
+                                                </a>
+                                            </span>
+                                        </li>
+
+                                    </ol>
+                                </div>
+                            </div>
+                            <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+                            <div class="row">
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title">
+                                        İş Başvurusu
+                                    </h3>
+                                    <h5>ARÇELİK - LG 'ye Mavi Yakalı Personel Başvurusu İçin Hoşgeldiniz!</h5>
+                                </div>
+                            </div>
+                            <div>
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div> <!-- wizard container -->
+                </div>
+            </div> <!-- row -->
+        </div> <!--  big container -->
+    </div>
+    <!--   Core JS Files   -->
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.bootstrap.js"></script>
+    <script src="~/Scripts/material-bootstrap-wizard.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/modal.js"></script>
+    <script src="~/Scripts/wizard.js"></script>
+    @RenderSection("scripts", false)
+    <script>
+        $(document).ready(function myfunction() {
+            $("#logout").click(function (e) {
+                sessionStorage.clear();
+                e.preventDefault();
+                window.location.href = "/Anasayfa/Cikis";
+            });
+        });
+
+    </script>
+</body>
+</html>
